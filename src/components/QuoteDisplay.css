@@ -1,0 +1,23 @@
+/* src/styles/QuoteDisplay.css */
+
+.quote-card {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fafafa;
+    border-left: 5px solid #007bff;
+    border-radius: 8px;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.quote-author {
+    font-size: 1rem;
+    text-align: right;
+    margin-top: 15px;
+    color: #777;
+}
