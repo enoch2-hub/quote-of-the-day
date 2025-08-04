@@ -3,9 +3,10 @@
 .quote-card {
     margin-bottom: 30px;
     padding: 20px;
-    background: #fafafa;
+    /* background: #fafafa; */
+    background-color: var(--quote-card-bg);
     border-left: 5px solid #007bff;
-    background: var(--quote-card-bg);
+    border-radius: 8px;
 }
 
 .quote-text {

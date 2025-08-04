@@ -1,13 +1,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background: #f0f2f5; */
-  background: var(--background-color);
-  color: #333;
+  background-color: var(--background-color2);
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0056b3;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+  /* Smooth transition for theme change */
 }
 
 .app-container {
@@ -34,13 +35,14 @@ main {
 .quote-card {
   margin-bottom: 30px;
   padding: 20px;
-  background: #fafafa;
+  background: var(--app-background);
   border-left: 5px solid #007bff;
   border-radius: 8px;
 }
 
 .quote-text {
   font-size: 1.5rem;
+  color: var(--text-color);
   font-style: italic;
   line-height: 1.6;
   margin: 0;
@@ -50,12 +52,12 @@ main {
   font-size: 1rem;
   text-align: right;
   margin-top: 15px;
-  color: #777;
+  color: var(--text-color);
 }
 
 .loading-message {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-color);
 }
 
 .new-quote-btn {

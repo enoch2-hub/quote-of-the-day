@@ -1,5 +1,6 @@
 :root {
     --background-color: #f0f2f5;
+    --background-color2: #58a9ff;
     --app-background: #fff;
     --text-color: #333;
     --secondary-text-color: #777;
@@ -8,22 +9,12 @@
     --quote-card-border: #007bff;
 }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background-color 0.3s ease;
-    /* Smooth transition for theme change */
-}
+
 
 /* Dark Theme overrides */
 .dark-theme {
     --background-color: #434343;
+    --background-color2: #0453a7;
     --app-background: #1e1e1e;
     --text-color: #e0e0e0;
     --secondary-text-color: #b0b0b0;

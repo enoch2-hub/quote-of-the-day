@@ -2,14 +2,14 @@
 .favorites-container {
     margin-top: 50px;
     padding: 20px;
-    background: #f8f9fa;
+    background: var(--app-background);
     border-radius: 8px;
     text-align: left;
 }
 
 .favorites-container h2 {
     text-align: center;
-    color: #5d5d5d;
+    color: var(--text-color);
     margin-bottom: 25px;
 }
 
@@ -20,7 +20,7 @@
 
 .favorite-item {
     position: relative;
-    background: #fff;
+    background: var(--background-color);
     border-left: 3px solid #6c757d;
     padding: 15px;
     margin-bottom: 15px;
@@ -33,13 +33,13 @@
     font-style: italic;
     margin: 0 30px 5px 0;
     line-height: 1.4;
-    color: #444;
+    color: var(--text-color);
 }
 
 .favorite-author {
     font-size: 0.8rem;
     text-align: right;
-    color: #666;
+    color: var(--text-color);
 }
 
 .remove-btn {
