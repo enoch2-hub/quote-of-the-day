@@ -1,8 +1,6 @@
-import React from 'react';
 import './Controls.css';
 
-// We added onAddToFavoritesClick as a new prop
-const Controls = ({ onNewQuoteClick, onAddToFavoritesClick, isLoading }) => {
+const Controls = ({ onNewQuoteClick, onAddToFavoritesClick, onSetDailyFocusClick, onToggleTheme, isLoading, currentTheme }) => {
   return (
     <div className="controls-container">
       <button 
@@ -18,6 +16,21 @@ const Controls = ({ onNewQuoteClick, onAddToFavoritesClick, isLoading }) => {
         className="add-to-favorites-btn"
       >
         Add to Favorites
+      </button>
+
+      {/* <button 
+        onClick={onSetDailyFocusClick}
+        className="set-daily-focus-btn"
+      >
+        Set Daily Focus
+      </button> */}
+      
+      {/* New button to toggle theme */}
+      <button 
+        onClick={onToggleTheme}
+        className="toggle-theme-btn"
+      >
+        {currentTheme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
       </button>
     </div>
   );

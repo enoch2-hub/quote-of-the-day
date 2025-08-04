@@ -1,5 +1,3 @@
-/* src/styles/Controls.css */
-
 .controls-container {
     margin-top: 20px;
 }
@@ -43,9 +41,49 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
 }
 
 .add-to-favorites-btn:hover {
     background: #218838;
     transform: translateY(-2px);
 }
+
+
+.set-daily-focus-btn {
+    background: #ffc107;
+    color: #343a40;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.set-daily-focus-btn:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+
+/* toggle theme btn */
+
+.toggle-theme-btn {
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-theme-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+

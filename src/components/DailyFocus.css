@@ -1,0 +1,40 @@
+/* src/styles/DailyFocus.css */
+
+.daily-focus-container {
+    margin-bottom: 30px;
+}
+
+.daily-focus-card {
+    padding: 20px;
+    /* Using our CSS variables for theming */
+    background: var(--quote-card-bg);
+    border-left: 5px solid var(--quote-card-border);
+    border-radius: 8px;
+}
+
+.daily-focus-card h3 {
+    margin: 0 0 10px 0;
+    color: var(--quote-card-border);
+}
+
+.daily-focus-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.daily-focus-author {
+    font-size: 0.9rem;
+    text-align: right;
+    margin-top: 10px;
+    color: var(--secondary-text-color);
+}
+
+/* Mobile styles for Daily Focus */
+@media (max-width: 600px) {
+    .daily-focus-text {
+        font-size: 1rem;
+    }
+}

@@ -1,24 +1,29 @@
 import { useState, useEffect } from 'react';
 import QuoteDisplay from './components/QuoteDisplay';
 import Controls from './components/Controls';
-import FavoritesList from './components/FavoritesList'; // We will create this next
+import FavoritesList from './components/FavoritesList';
+import DailyFocus from './components/DailyFocus'; // This is the missing import
 import './styles/App.css';
 
 function App() {
   const [quote, setQuote] = useState({ text: 'Finding inspiration...', author: '' });
   const [isLoading, setIsLoading] = useState(false);
-  
-  // New state to hold our list of favorite quotes
   const [favorites, setFavorites] = useState([]);
+  const [dailyFocus, setDailyFocus] = useState(null);
 
-  // useEffect now has two responsibilities:
-  // 1. Fetching the initial quote.
-  // 2. Loading saved favorites from local storage.
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme : 'light';
+  });
+
   useEffect(() => {
     fetchNewQuote();
 
     const savedFavorites = JSON.parse(localStorage.getItem('favoriteQuotes')) || [];
     setFavorites(savedFavorites);
+    
+    const savedDailyFocus = JSON.parse(localStorage.getItem('dailyFocus'));
+    setDailyFocus(savedDailyFocus);
   }, []);
 
   const fetchNewQuote = async () => {
@@ -38,9 +43,7 @@ function App() {
     }
   };
 
-  // New function to add the current quote to favorites
   const addToFavorites = () => {
-    // Check if the quote is already in favorites to prevent duplicates
     const isAlreadyFavorite = favorites.some(fav => fav.text === quote.text);
     if (!isAlreadyFavorite) {
       const newFavorites = [...favorites, quote];
@@ -49,18 +52,33 @@ function App() {
     }
   };
 
-  // New function to remove a quote from favorites
   const removeFromFavorites = (quoteToRemove) => {
     const newFavorites = favorites.filter(fav => fav.text !== quoteToRemove.text);
     setFavorites(newFavorites);
     localStorage.setItem('favoriteQuotes', JSON.stringify(newFavorites));
   };
+  
+  const setDailyFocusQuote = () => {
+    setDailyFocus(quote);
+    localStorage.setItem('dailyFocus', JSON.stringify(quote));
+  };
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      return newTheme;
+    });
+  };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${theme}-theme`}> 
       <header>
         <h1>Quote of the Day</h1>
       </header>
+      
+      <DailyFocus dailyFocus={dailyFocus} />
+
       <main>
         {isLoading ? (
           <p className="loading-message">Loading new quote...</p>
@@ -70,7 +88,10 @@ function App() {
         <Controls 
           onNewQuoteClick={fetchNewQuote} 
           onAddToFavoritesClick={addToFavorites}
+          onSetDailyFocusClick={setDailyFocusQuote}
+          onToggleTheme={toggleTheme}
           isLoading={isLoading} 
+          currentTheme={theme}
         />
         <FavoritesList 
           favorites={favorites} 

@@ -1,19 +1,21 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f2f5;
+  /* background: #f0f2f5; */
+  background: var(--background-color);
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  background-color: #0056b3;
 }
 
 .app-container {
   max-width: 700px;
   width: 90%;
   padding: 30px;
-  background: #fff;
+  /* background: #fff; */
+  background: var(--background-color);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -22,7 +24,7 @@ body {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #5d5d5d;
+  color: var(--text-color);
 }
 
 main {
@@ -77,4 +79,65 @@ main {
   background: #ccc;
   cursor: not-allowed;
   transform: none;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+    /* Align to the top on smaller screens */
+    padding-top: 20px;
+  }
+
+  .app-container {
+    width: 95%;
+    /* Make it slightly wider to fill the screen better */
+    padding: 20px 15px;
+    /* Reduce padding */
+  }
+
+  header h1 {
+    font-size: 2rem;
+    /* Make the title smaller */
+    margin-bottom: 15px;
+  }
+
+  .quote-text {
+    font-size: 1.2rem;
+    /* Reduce the main quote font size */
+  }
+
+  .quote-author {
+    font-size: 0.9rem;
+  }
+
+  /* Make all the buttons stack vertically */
+  .controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .new-quote-btn,
+  .add-to-favorites-btn,
+  .set-daily-focus-btn {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .favorites-container {
+    margin-top: 30px;
+  }
+
+  .daily-focus-text {
+    font-size: 1rem;
+  }
 }
