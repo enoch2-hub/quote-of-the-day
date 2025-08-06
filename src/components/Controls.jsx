@@ -18,20 +18,14 @@ const Controls = ({ onNewQuoteClick, onAddToFavoritesClick, onSetDailyFocusClick
         Add to Favorites
       </button>
 
-      {/* <button 
+      <button 
         onClick={onSetDailyFocusClick}
         className="set-daily-focus-btn"
       >
         Set Daily Focus
-      </button> */}
-      
-      {/* New button to toggle theme */}
-      <button 
-        onClick={onToggleTheme}
-        className="toggle-theme-btn"
-      >
-        {currentTheme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
       </button>
+      
+
     </div>
   );
 };

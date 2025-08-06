@@ -72,11 +72,20 @@ function App() {
   };
 
   return (
-    <div className={`app-container ${theme}-theme`}> 
+    <div className={`app-container ${theme}-theme`}>
+
+      <button 
+        onClick={toggleTheme}
+        className="toggle-theme-btn"
+      >
+        {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+      </button>
+
+
       <header>
         <h1>Quote of the Day</h1>
       </header>
-      
+
       <DailyFocus dailyFocus={dailyFocus} />
 
       <main>
@@ -89,9 +98,9 @@ function App() {
           onNewQuoteClick={fetchNewQuote} 
           onAddToFavoritesClick={addToFavorites}
           onSetDailyFocusClick={setDailyFocusQuote}
-          onToggleTheme={toggleTheme}
+          // onToggleTheme={toggleTheme}
           isLoading={isLoading} 
-          currentTheme={theme}
+          // currentTheme={theme}
         />
         <FavoritesList 
           favorites={favorites} 
